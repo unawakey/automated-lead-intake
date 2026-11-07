@@ -293,6 +293,258 @@
           "name": "SMTP account"
         }
       }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1TXUExdkSqziDM8MLMz8qWtap3vwPPWblWSJKkQrzVAM",
+          "mode": "list",
+          "cachedResultName": "Lead Intake",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TXUExdkSqziDM8MLMz8qWtap3vwPPWblWSJKkQrzVAM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 833200930,
+          "mode": "list",
+          "cachedResultName": "Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TXUExdkSqziDM8MLMz8qWtap3vwPPWblWSJKkQrzVAM/edit#gid=833200930"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "timestamp": "={{ $now }}",
+            "email": "={{ $('Receive Inquiry').item.json.body.email }}",
+            "result": "success",
+            "detail": "lead saved and agency notified"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "result",
+              "displayName": "result",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "detail",
+              "displayName": "detail",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1344,
+        -96
+      ],
+      "id": "a341b26c-4afa-4b04-90dc-c52babbe006d",
+      "name": "Log success",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Y3cYN9R46PH3K4bc",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1TXUExdkSqziDM8MLMz8qWtap3vwPPWblWSJKkQrzVAM",
+          "mode": "list",
+          "cachedResultName": "Lead Intake",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TXUExdkSqziDM8MLMz8qWtap3vwPPWblWSJKkQrzVAM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 833200930,
+          "mode": "list",
+          "cachedResultName": "Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TXUExdkSqziDM8MLMz8qWtap3vwPPWblWSJKkQrzVAM/edit#gid=833200930"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "timestamp": "={{ $now }}",
+            "email": "={{ $('Receive Inquiry').item.json.body.email }}",
+            "result": "invalid",
+            "detail": "failed validation: missing field or bad email"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "result",
+              "displayName": "result",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "detail",
+              "displayName": "detail",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        448,
+        16
+      ],
+      "id": "5baaf5cc-2e0d-4788-b0eb-162fcbbcf140",
+      "name": "Log invalid",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Y3cYN9R46PH3K4bc",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1TXUExdkSqziDM8MLMz8qWtap3vwPPWblWSJKkQrzVAM",
+          "mode": "list",
+          "cachedResultName": "Lead Intake",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TXUExdkSqziDM8MLMz8qWtap3vwPPWblWSJKkQrzVAM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 833200930,
+          "mode": "list",
+          "cachedResultName": "Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TXUExdkSqziDM8MLMz8qWtap3vwPPWblWSJKkQrzVAM/edit#gid=833200930"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "timestamp": "={{ $now }}",
+            "email": "={{ $('Receive Inquiry').item.json.body.email }}",
+            "result": "duplicate",
+            "detail": "email already exists in Leads"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "result",
+              "displayName": "result",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "detail",
+              "displayName": "detail",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        896,
+        -256
+      ],
+      "id": "f7a42067-fb01-4c07-b48f-bb1e1435e43b",
+      "name": "Log duplicate",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Y3cYN9R46PH3K4bc",
+          "name": "Google Sheets account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -316,6 +568,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "Log invalid",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -332,7 +591,13 @@
     },
     "Is duplicate?": {
       "main": [
-        [],
+        [
+          {
+            "node": "Log duplicate",
+            "type": "main",
+            "index": 0
+          }
+        ],
         [
           {
             "node": "Save lead to sheet",
@@ -352,6 +617,22 @@
           }
         ]
       ]
+    },
+    "Notify Agency": {
+      "main": [
+        [
+          {
+            "node": "Log success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log success": {
+      "main": [
+        []
+      ]
     }
   },
   "active": false,
@@ -359,7 +640,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "6b591232-6aed-43c4-87a1-b5ca9fa35d8a",
+  "versionId": "3be47b6e-4a68-438e-bf5a-8af418a03f87",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "ce8605b5abbca2623f1669d4c431b1403903f3313d3e71d44a911549c1e0052a"
