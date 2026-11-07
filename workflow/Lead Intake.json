@@ -5,6 +5,7 @@
       "parameters": {
         "httpMethod": "POST",
         "path": "lead-intake",
+        "responseMode": "responseNode",
         "options": {}
       },
       "type": "n8n-nodes-base.webhook",
@@ -545,6 +546,57 @@
           "name": "Google Sheets account"
         }
       }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{ \"ok\": true, \"message\": \"Thanks! We'll be in touch soon.\" }",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        1568,
+        -96
+      ],
+      "id": "859af1f9-6070-42ab-8157-9a688d2deac0",
+      "name": "Respond success"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{ \"ok\": false, \"message\": \"Please check your details and try again.\" }",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        672,
+        16
+      ],
+      "id": "b28ff9b6-b2e0-4480-a4db-f0bb62c40ff4",
+      "name": "Respond invalid"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{ \"ok\": false, \"message\": \"We already have an inquiry from this email.\" }",
+        "options": {
+          "responseCode": 409
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        1120,
+        -256
+      ],
+      "id": "17fd3b5f-7bab-44f6-a438-9aedee14982a",
+      "name": "Respond duplicate"
     }
   ],
   "pinData": {},
@@ -631,7 +683,35 @@
     },
     "Log success": {
       "main": [
-        []
+        [
+          {
+            "node": "Respond success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log invalid": {
+      "main": [
+        [
+          {
+            "node": "Respond invalid",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log duplicate": {
+      "main": [
+        [
+          {
+            "node": "Respond duplicate",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
@@ -640,7 +720,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "3be47b6e-4a68-438e-bf5a-8af418a03f87",
+  "versionId": "f4bb83f4-4516-48b8-8f54-66f9f14e1df9",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "ce8605b5abbca2623f1669d4c431b1403903f3313d3e71d44a911549c1e0052a"
