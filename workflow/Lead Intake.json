@@ -11,7 +11,7 @@
       "typeVersion": 2.2,
       "position": [
         0,
-        0
+        -96
       ],
       "id": "8f1c9cf7-ab49-4d79-b122-e75296b8bc7e",
       "name": "Receive Inquiry",
@@ -85,7 +85,7 @@
       "typeVersion": 2.4,
       "position": [
         224,
-        0
+        -96
       ],
       "id": "fb3280aa-f347-4a3b-bc9b-e500866820a9",
       "name": "Validate Lead"
@@ -120,7 +120,7 @@
       "typeVersion": 4.7,
       "position": [
         448,
-        -96
+        -160
       ],
       "id": "19c4af45-4041-414d-bedf-864f2a869053",
       "name": "Find existing lead by email",
@@ -161,7 +161,7 @@
       "typeVersion": 2.4,
       "position": [
         672,
-        -96
+        -160
       ],
       "id": "88eec8f0-bfce-43d4-9f39-fc080df7401d",
       "name": "Is duplicate?"
@@ -259,7 +259,7 @@
       "typeVersion": 4.7,
       "position": [
         896,
-        0
+        -96
       ],
       "id": "7b4fb422-bffd-4d05-a793-62799ef981b4",
       "name": "Save lead to sheet",
@@ -267,6 +267,30 @@
         "googleSheetsOAuth2Api": {
           "id": "Y3cYN9R46PH3K4bc",
           "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "leads@brightside.example",
+        "toEmail": "team@brightside.example",
+        "subject": "=New lead: {{ $('Receive Inquiry').item.json.body.name }} - {{ $('Receive Inquiry').item.json.body.service }}",
+        "html": "=<h2>New lead received</h2>\n<table cellpadding=\"6\">\n  <tr><td><b>Name</b></td><td>{{ $('Receive Inquiry').item.json.body.name }}</td></tr>\n  <tr><td><b>Email</b></td><td>{{ $('Receive Inquiry').item.json.body.email }}</td></tr>\n  <tr><td><b>Phone</b></td><td>{{ $('Receive Inquiry').item.json.body.phone }}</td></tr>\n  <tr><td><b>Service</b></td><td>{{ $('Receive Inquiry').item.json.body.service }}</td></tr>\n  <tr><td valign=\"top\"><b>Message</b></td><td>{{ $('Receive Inquiry').item.json.body.message }}</td></tr>\n</table>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        1120,
+        -96
+      ],
+      "id": "632e5b57-0a09-4465-9d5b-ebcb06a89024",
+      "name": "Notify Agency",
+      "webhookId": "b5540e28-bab5-4f49-a32e-5626a2887401",
+      "credentials": {
+        "smtp": {
+          "id": "nbeMoKiNz4GPksAI",
+          "name": "SMTP account"
         }
       }
     }
@@ -317,6 +341,17 @@
           }
         ]
       ]
+    },
+    "Save lead to sheet": {
+      "main": [
+        [
+          {
+            "node": "Notify Agency",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
@@ -324,7 +359,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "11735117-d1c4-45bf-86cb-f1a355b48bce",
+  "versionId": "6b591232-6aed-43c4-87a1-b5ca9fa35d8a",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "ce8605b5abbca2623f1669d4c431b1403903f3313d3e71d44a911549c1e0052a"
