@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Brightside Digital - Contact Us</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 480px; margin: 2rem auto; padding: 0 1rem; }
+      div { margin-bottom: 1rem; }
+      label { display: block; margin-bottom: 0.25rem; font-weight: 600; }
+      input, select, textarea { width: 100%; padding: 0.5rem; box-sizing: border-box; }
+      button { padding: 0.6rem 1.2rem; cursor: pointer; }
+      #status { margin-top: 1rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Brightside Digital</h1>
+    <p>Tell us about your project and we'll get back to you.</p>
+
+    <form id="lead-form" method="post">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required />
+      </div>
+      <div>
+        <label for="phone">Phone (optional)</label>
+        <input type="tel" name="phone" id="phone" />
+      </div>
+      <div>
+        <label for="service">Service interested in</label>
+        <select name="service" id="service" required>
+          <option value="">Choose one...</option>
+          <option value="web-design">Web design</option>
+          <option value="seo">SEO</option>
+          <option value="social-media">Social media management</option>
+          <option value="branding">Branding</option>
+        </select>
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea name="message" id="message" rows="5" required></textarea>
+      </div>
+      <button type="submit">Send inquiry</button>
+    </form>
+
+    <p id="status"></p>
+  </body>
+</html>
